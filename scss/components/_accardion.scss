@@ -1,0 +1,91 @@
+.accardion {
+    @include flex();
+    flex-direction: column;
+    gap: 0px;
+    width: 100%;
+    margin-bottom: 136px;
+
+    .accardion_top_text {
+        @include text_big();
+        max-width: 736px;
+        margin-bottom: 48px;
+    }
+
+    .accardion_btn_box {
+        @include flex();
+        gap: 24px;
+        margin-bottom: 44px;
+
+        .accardion_btns {
+            @include button();
+            border: none;
+        }
+    }
+
+    .accardion_box {
+        max-width: 546px;
+        width: 100%;
+        height: 50px;
+        min-height: 50px;
+        border-bottom: 1px solid $border-col;
+        overflow: hidden;
+        padding: 0px 6px 20px 6px;
+        transition: .3s;
+        margin-top: 20px;
+
+        .accardion_box_top_gr {
+            @include flex();
+            justify-content: space-between;
+
+            .accardion_box_child {
+                @include flex();
+                gap: 21px;
+
+                .accardion_box_child_text {
+                    @include text_midl();
+                    font-size: 16px;
+                    font-weight: 500;
+                    transition: .2s;
+
+                    &:hover {
+                        color: $btn-two-bg;
+                        transition: .2s;
+                    }
+                }
+                .accardion_box_child_text_right{
+                    @include text_midl();
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+            }
+        }
+        .hello_text{
+             @include text_midl(); 
+             margin-top: 20px;  
+        }
+
+        &:hover{
+            height: 95px;
+            min-height: 95px;
+            transition: .3s;
+        }
+        &:hover .accardion_box_child_icon{
+            transform: rotate(180deg);
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .accardion{
+        .accardion_top_text{
+            font-size: 24px;
+        }
+    }
+}
+@media (max-width: 450px) {
+    .accardion{
+        .accardion_btn_box{
+            flex-direction: column;
+        }
+    }
+}

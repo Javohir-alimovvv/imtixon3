@@ -1,0 +1,125 @@
+.recommended {
+    @include flex();
+    gap: 0px;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-bottom: 136px;
+
+    .recommended_top_text {
+        @include text_big();
+        max-width: 800px;
+        margin-bottom: 12px
+    }
+
+    .recommended_midl_text {
+        @include text_midl();
+        color: $main-col;
+        margin-bottom: 64px;
+    }
+
+    .recommended_cards {
+        @include flex();
+        justify-content: start;
+        width: 100%;
+        overflow: auto;
+        padding: 20px 0px;
+        margin-bottom: 64px;
+
+        .recommended_cards_box {
+            max-width: 256px;
+            width: 100%;
+            min-width: 256px;
+            height: 260px;
+            min-height: 26px;
+            border-radius: 24px;
+            border: 2px solid $border-col;
+            padding: 32px;
+            @include flex();
+            flex-direction: column;
+            align-items: start;
+            justify-content: end;
+            gap: 0px;
+            position: relative;
+            transition: .3s;
+
+
+            .recommended_cards_box_icons {
+                @include text_midl();
+                color: $main-col;
+                font-size: 32px;
+                margin-bottom: 24px;
+            }
+
+            .recommended_cards_box_text_top {
+                @include text();
+                font-size: 16px;
+                color: $btn-col;
+                margin-bottom: 4px;
+            }
+
+            .recommended_cards_box_text_bottom {
+                @include text_small();
+            }
+
+            .recommended_cards_box_child {
+                position: absolute;
+                @include text_small();
+                color: $btn-col;
+                width: 44px;
+                height: 26px;
+                border-radius: 32px;
+                background: $border-col;
+                @include flex();
+                top: 0;
+                left: 0;
+                margin-top: 32px;
+                margin-left: 32px;
+                opacity: 0;
+            }
+
+            &:hover .recommended_cards_box_child {
+                opacity: 1;
+                transition: .3s;
+            }
+        }
+    }
+    .recommended_bottom{
+        @include flex();
+        gap: 8px;
+        .recommended_bottom_icons{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            font-size: 24px;
+            color: $main-col;
+            transition: .2s;
+            @include flex();
+            &:hover{
+                border-color: $border-col;
+                transition: .2s;
+            }
+        }
+    }
+}
+
+@media (max-width: 780px) {
+    .recommended {
+        .recommended_top_text {
+            font-size: 24px;
+        }
+
+        .recommended_midl_text {
+            font-size: 14px;
+        }
+    }
+}
+
+@media (max-width: 780px) {
+    .recommended {
+        .recommended_top_text {
+            font-size: 18px;
+        }
+    }
+}

@@ -1,0 +1,130 @@
+.clents {
+    @include flex();
+    flex-direction: column;
+    gap: 0px;
+    width: 100%;
+    margin-top: 136px;
+    height: auto;
+    margin-bottom: 136px;
+
+    .clents_box {
+        @include flex();
+        gap: 124px;
+
+
+        .clents_group {
+            @include flex();
+            gap: 8px;
+
+            .clents_group_icons {
+                @include text_midl();
+                color: $main-col;
+            }
+
+            .clents_group_text {
+                @include text();
+            }
+
+        }
+
+        .clents_linia_top {
+            width: 1px;
+            height: 150px;
+            background: $border-col;
+        }
+
+        .clents_group_secund {
+            @include flex();
+            gap: 8px;
+            display: none;
+
+            .clents_group_icons {
+                @include text_midl();
+                color: $main-col;
+            }
+
+            .clents_group_text {
+                @include text();
+            }
+
+        }
+
+        .clents_linia_top_secund {
+            width: 280px;
+            height: 1px;
+            background: $border-col;
+            display: none;
+        }
+    }
+
+
+
+    .clents_box_bottom {
+        @include flex();
+        gap: 124px;
+
+        .clents_group {
+            @include flex();
+            gap: 8px;
+
+
+            .clents_group_icons {
+                @include text_midl();
+                color: $main-col;
+            }
+
+            .clents_group_text {
+                @include text();
+            }
+        }
+
+        .clents_linia_top {
+            width: 1px;
+            height: 150px;
+            background: $border-col;
+        }
+    }
+
+    .clents_center_linea {
+        max-width: 1118px;
+        width: 100%;
+        height: 1.5px;
+        background: $border-col;
+    }
+
+}
+
+
+@media (max-width: 900px) {
+    .clents {
+        margin-bottom: 80px;
+
+        .clents_center_linea {
+            display: none;
+        }
+
+        .clents_box_bottom {
+            display: none;
+        }
+
+        .clents_box {
+            flex-direction: column;
+            gap: 40px;
+
+            .clents_linia_top {
+                width: 280px;
+                height: 1px;
+            }
+
+            .clents_group_secund {
+                @include flex();
+                gap: 8px;
+                display: block;
+            }
+
+            .clents_linia_top_secund {
+                display: block;
+            }
+        }
+    }
+}

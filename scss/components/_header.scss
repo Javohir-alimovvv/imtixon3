@@ -39,6 +39,7 @@
             .header_select {
                 @include text();
                 border: none;
+                background: none;
                 outline: none;
                 transform: translateY(-40px);
                 opacity: 0;

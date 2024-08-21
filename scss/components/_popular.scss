@@ -48,6 +48,7 @@
         width: 100%;
         height: auto;
         overflow-x: auto;
+        justify-content: start;
         padding: 20px 0px;
         margin-bottom: 40px;
 
@@ -60,10 +61,36 @@
                 max-width: 336px;
                 height: auto;
                 margin-bottom: 21px;
+                position: relative;
+                overflow: hidden;
+                border-radius: 20px;
+                cursor: pointer;
 
                 .card_images {
                     width: 100%;
                     height: 100%;
+                    transition: .5s;
+                }
+
+                .card__box {
+                    position: absolute;
+                    top: -100%;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    transition: .5s;
+                    background: #0000006f;
+                    z-index: 1;
+                }
+
+                &:hover .card__box {
+                    top: 0%;
+                    transition: .5s;
+                }
+
+                &:hover .card_images {
+                    transform: scale(1.1);
+                    transition: .5s;
                 }
             }
 
@@ -78,7 +105,8 @@
         }
 
     }
-    .popular_btn{
+
+    .popular_btn {
         @include button();
         @include flex();
         gap: 10px;
@@ -87,26 +115,30 @@
 
 
 @media (max-width: 850px) {
-    .popular{
+    .popular {
         margin-top: 100px;
     }
 }
+
 @media (max-width: 580px) {
-    .popular{
-        .popular_top_gr{
-            .popular_top_gr_box{
-                .popular_top_gr_box_text{
+    .popular {
+        .popular_top_gr {
+            .popular_top_gr_box {
+                .popular_top_gr_box_text {
                     font-size: 18px;
                     line-height: 21px;
                 }
             }
-            .popular_top_gr_box_for_text{
+
+            .popular_top_gr_box_for_text {
                 font-size: 16px;
             }
         }
-        .popular_center_box{
+
+        .popular_center_box {
             justify-content: start;
-            .popular_center_box_child{
+
+            .popular_center_box_child {
                 min-width: 290px;
             }
         }

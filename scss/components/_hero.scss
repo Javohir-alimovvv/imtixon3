@@ -1,0 +1,208 @@
+.hero {
+    width: 100%;
+    height: 708px;
+    margin-top: 88px;
+    @include flex();
+    flex-direction: column;
+    background-image: url("../../assets/images/pexels-leah-kelley-3935702\ \(1\)\ 1.png");
+    background-size: cover;
+    margin-bottom: 228px;
+    border-radius: 20px;
+
+    .hero_child {
+        width: 100%;
+        height: 100%;
+        background-image: url("../../assets/images/gradient\ faded.png");
+        background-size: cover;
+        @include flex();
+        flex-direction: column;
+        justify-content: start;
+        gap: 0px;
+        position: relative;
+
+        .hero_child_top_text {
+            font-size: 96px;
+            font-weight: 700;
+            line-height: 96px;
+            letter-spacing: -0.02em;
+            text-align: center;
+            color: $btn-col;
+            margin-bottom: 16px;
+            margin-top: 167px;
+        }
+
+        .hero_child_center_text {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 32px;
+            letter-spacing: -0.02em;
+            text-align: center;
+            color: $btn-col;
+            margin-bottom: 24px
+        }
+
+        .hero_child_btn {
+            @include button_two();
+        }
+
+        .hero_bottom_content {
+            position: absolute;
+            top: 549px;
+            z-index: 2;
+            max-width: 1120px;
+            width: 100%;
+            background: $btn-h;
+            padding: 40px;
+            gap: 31px;
+            border-radius: 24px;
+            box-shadow: 0px 40px 64px -32px #0F0F0F1A;
+
+            .hero_bottom_content_top {
+                @include flex();
+                width: 100%;
+                border-bottom: 1px solid $border-col;
+                justify-content: start;
+
+                .hero_bottom_content_top_text {
+                    @include text();
+                    width: auto;
+                    height: 40px;
+                    padding-bottom: 30px;
+                    cursor: pointer;
+                    transition: .3s;
+
+                    &:hover {
+                        border-bottom: 1px solid $btn-col;
+                        transition: .3s;
+                    }
+                }
+            }
+
+            .hero_bottom_content_bottom {
+                margin-top: 32px;
+
+                .hero_bottom_content_btn_gr {
+                    @include flex();
+                    justify-content: start;
+
+                    .hero_bottom_content_btn_gr_btn {
+                        @include button();
+                    }
+                }
+
+                .hero_bottom_content_text_gr {
+                    @include flex();
+                    justify-content: space-between;
+                    padding: 0px 20px;
+                    margin-top: 12px;
+
+                    .hero_bottom_text_gr {
+                        @include flex();
+                        align-items: center;
+                        justify-content: start;
+                        gap: 12px;
+
+                        .cursor_icon {
+                            @include text();
+                            font-size: 20px;
+                        }
+
+                        .Pickup_text {
+                            @include text_midl();
+                        }
+
+                        .Where_text {
+                            @include text();
+                            font-size: 16px;
+                            text-align: left;
+                            font-weight: 400;
+                        }
+                    }
+
+                    .search_btn {
+                        @include button_two();
+                        border-radius: 50%;
+                        padding: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 850px) {
+    .hero {
+        height: auto;
+
+        .hero_child {
+            .hero_bottom_content {
+                top: 400px;
+
+                .hero_bottom_content_bottom {
+                    .hero_bottom_content_text_gr {
+                        .hero_bottom_text_gr {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .hero {
+        .hero_child {
+            justify-content: start;
+            .hero_child_top_text{
+                margin-top: 30px;
+                font-size: 28px;
+                margin-bottom: 0px;
+            }
+            .hero_child_center_text{
+                font-style: 22px;
+            }
+            .hero_child_btn{
+                margin-bottom: 30px;
+            }
+            .hero_bottom_content {
+                top: 270px;
+
+                .hero_bottom_content_bottom {
+                    .hero_bottom_content_btn_gr {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 400px) {
+    .hero {
+    margin-bottom: 128px;
+
+        .hero_child {
+            justify-content: start;
+            .hero_child_top_text{
+                margin-top: 30px;
+                font-size: 28px;
+                margin-bottom: 0px;
+            }
+            .hero_child_center_text{
+                font-style: 22px;
+            }
+            .hero_child_btn{
+                margin-bottom: 190px;
+            }
+            .hero_bottom_content {
+                top: 280px;
+                padding: 20px;
+                .hero_bottom_content_top{
+                    gap: 16px;
+                }
+            }
+        }
+    }
+}

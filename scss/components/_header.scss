@@ -1,0 +1,286 @@
+.header_big {
+    width: 100%;
+    height: 88px;
+    background: $btn-h;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    @include flex();
+
+    .header {
+        width: 100%;
+        @include flex();
+        justify-content: space-between;
+
+        .header_left_content {
+            @include flex();
+            gap: 40px;
+
+            .header_logojon {
+                transform: translateY(-40px);
+                opacity: 0;
+                animation: logo .5s;
+                animation-delay: .4s;
+                animation-fill-mode: forwards;
+            }
+
+            .linea {
+                width: 1px;
+                height: 48px;
+                background: $border-col;
+                transform: translateY(-40px);
+                opacity: 0;
+                animation: linea .5s;
+                animation-delay: .6s;
+                animation-fill-mode: forwards;
+            }
+
+            .header_select {
+                @include text();
+                border: none;
+                outline: none;
+                transform: translateY(-40px);
+                opacity: 0;
+                animation: select .5s;
+                animation-delay: .7s;
+                animation-fill-mode: forwards;
+                cursor: pointer;
+            }
+        }
+
+        .navbar {
+            @include flex();
+
+            .nav_content {
+                @include flex();
+
+                .nav_item {
+                    @include text();
+                    transform: translateY(-40px);
+                    opacity: 0;
+                    animation: item .5s;
+                    animation-delay: .8s;
+                    animation-fill-mode: forwards;
+                }
+
+                .nav_item2 {
+                    @include text();
+                    transform: translateY(-40px);
+                    opacity: 0;
+                    animation: item_two .5s;
+                    animation-delay: .9s;
+                    animation-fill-mode: forwards;
+                }
+            }
+
+            .header_btn {
+                @include button();
+                transform: translateY(-40px);
+                opacity: 0;
+                animation: nav_btn .5s;
+                animation-delay: 1s;
+                animation-fill-mode: forwards;
+            }
+
+            .nav_call {
+                width: 36px;
+                height: 36px;
+                @include flex();
+                gap: 0px;
+                position: relative;
+                cursor: pointer;
+                transform: translateY(-40px);
+                opacity: 0;
+                animation: call .5s;
+                animation-delay: 1.1s;
+                animation-fill-mode: forwards;
+
+                .call_icon {
+                    @include text();
+                    font-size: 24px;
+                }
+
+                .call_nuqta {
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background: #58C27D;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+            }
+
+            .nav_avatar {
+                width: 40px;
+                height: 40px;
+                transform: translateY(-40px);
+                opacity: 0;
+                animation: avatar .5s;
+                animation-delay: 1.2s;
+                animation-fill-mode: forwards;
+                cursor: pointer;
+            }
+        }
+
+        .menu_btn {
+            @include flex();
+            background: none;
+            border: transparent;
+            @include text();
+            font-size: 24px;
+            color: $btn-two-bg;
+            display: none;
+            cursor: pointer;
+            transform: translateY(-40px);
+            opacity: 0;
+            animation: menu_icon .5s;
+            animation-delay: .6s;
+            animation-fill-mode: forwards;
+
+            .close_icon {
+                display: none
+            }
+        }
+    }
+}
+
+.saidbar {
+    @include flex();
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 83vh;
+    background: $btn-two-bg;
+    align-items: left;
+    margin-top: 88px;
+    margin-left: -60%;
+    transition: .8s;
+    z-index: 30;
+
+    .saidbar_content {
+        width: 70%;
+        height: 80%;
+        @include flex();
+        flex-direction: column;
+        align-items: left;
+        margin-top: 40px;
+
+        .saidbar_content_item {
+            @include text_midl();
+            font-size: 18px;
+            color: #FFFFFF;
+        }
+    }
+}
+
+
+
+
+
+
+@keyframes logo {
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes linea {
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes select {
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes item {
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes item_two {
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes nav_btn {
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes call {
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes avatar {
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes menu_icon {
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+
+
+
+@media (max-width: 840px) {
+    .header_big {
+        .header {
+            .navbar {
+                .nav_content {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 670px) {
+    .header_big {
+        .header {
+            .navbar {
+                display: none;
+            }
+
+            .menu_btn {
+                display: block;
+            }
+        }
+    }
+}
+
+@media (max-width: 410px) {
+    .header_big {
+        .header {
+            .header_left_content {
+                .header_select {
+                    display: none;
+                }
+            }
+        }
+    }
+}
